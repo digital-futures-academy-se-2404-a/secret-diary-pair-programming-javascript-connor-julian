@@ -79,6 +79,22 @@ describe("Diary Tests:", () => {
             });            
 
         });
+
+        describe("User Story 4 Tests:", () => {
+          it("Check that Diary has a Lock object", () => {
+            
+            expect(newDiary.getLock()).toBeDefined();
+          });
+            
+            // Not necessary, would be in Lock tests
+            // Only pull isLocked from Lock, to use for logic in Diary
+            it("Check that you can lock the diary", () => {
+            newDiary.getLock().lock();
+
+            expect(newDiary.getLock().getIsLocked()).toBeTrue();
+          });
+            
+        });
 });
 
 });

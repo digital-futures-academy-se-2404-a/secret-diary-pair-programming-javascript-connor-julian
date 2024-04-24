@@ -1,6 +1,13 @@
+import Lock from "../src/Lock.js";
+
 export default class Diary {
 
     #allEntries = [];
+    #lock;
+
+    constructor(newLock = new Lock()) {
+        this.#lock = newLock;
+    }
 
     getAllEntries() {
         return this.#allEntries;
@@ -17,5 +24,9 @@ export default class Diary {
             } 
         return undefined;  
         }
+    }
+
+    getLock() {
+        return this.#lock;
     }
  };
